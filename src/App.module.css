@@ -1,0 +1,73 @@
+.gridContainer {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu-global main-content ad-area"
+    "menu-context main-content ad-area"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 300px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: 10px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.globalMenu {
+  grid-area: menu-global;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.contextMenu {
+  grid-area: menu-context;
+  background-color: #555;
+  color: white;
+  padding: 20px;
+}
+
+.mainContent {
+  grid-area: main-content;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.adArea {
+  grid-area: ad-area;
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-areas:
+      "header"
+      "menu-global"
+      "menu-context"
+      "main-content"
+      "ad-area"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .adArea {
+    order: -1;
+  }
+}
